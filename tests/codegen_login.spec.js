@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-test.only("Codegen trial", async ({ page }) => {
+test("Codegen trial", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/login");
-  await page.pause();
   await page.getByRole("textbox", { name: "Username" }).click();
   await page.getByRole("textbox", { name: "Username" }).fill("tomsmith");
   await expect(page.getByRole("textbox", { name: "Username" })).toHaveValue(
